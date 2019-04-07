@@ -24,7 +24,14 @@ app.get('/', (req, res) => {
 const Cats = require('./models/cats')
 
 //Mongoose connection
-mongoose.connect('mongodb://localhost/cats')
+var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/cats'
+mongoose.connect(uristring, function(err, res){
+    if(err) {
+        console.log('Error connecting to MongoDB at ' + uristring + ' with error '+err)
+    }else{
+        console.log('Mongoose connected to ' + uristring)
+    }
+})
 const db = mongoose.connection
 
 ////app.get('/', (req, res) => {
@@ -63,6 +70,6 @@ app.get('/api/cats/breed/:name', (req, res) => {
     })
 })
 
-app.listen(port, (req,res) =>
+app.listen(port)
+console.log(port)
 console.log(`Server running on port ${port}`)
-)
