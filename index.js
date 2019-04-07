@@ -1,13 +1,24 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const path = require('path')
 
-const port = 5000
+const port = process.env.PORT | 5000
 const app = express()
 app.use(bodyParser.json())
 
 //Define client
-app.use(express.static(__dirname+'/client'))
+app.use(express.static(path.join(__dirname+'/client')))
+
+//production
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client/build/index.html')))
+}
+
+//dev mode
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname,'/client/public/index.html'))
+})
 
 //Schema
 const Cats = require('./models/cats')
@@ -16,9 +27,9 @@ const Cats = require('./models/cats')
 mongoose.connect('mongodb://localhost/cats')
 const db = mongoose.connection
 
-app.get('/', (req, res) => {
-    res.send('Please, use api/cats')
-})
+////app.get('/', (req, res) => {
+//   res.send('Please, use api/cats')
+//})
 
 //Routes
 
@@ -52,5 +63,6 @@ app.get('/api/cats/breed/:name', (req, res) => {
     })
 })
 
-app.listen(5000)
+app.listen(port, (req,res) =>
 console.log(`Server running on port ${port}`)
+)

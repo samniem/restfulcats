@@ -25,6 +25,7 @@ class Header extends Component {
                             Select Country
                             <form>
                                 <select>
+                                    <optgroup>
                                     <option onClick={this.props.actions.CountryChange} value="">Any</option>
                                     <option onClick={this.props.actions.CountryChange} value="France">France</option>
                                     <option onClick={this.props.actions.CountryChange} value="Japan">Japan</option>
@@ -33,6 +34,7 @@ class Header extends Component {
                                     <option onClick={this.props.actions.CountryChange} value="Turkey">Turkey</option>
                                     <option onClick={this.props.actions.CountryChange} value="United Kingdom">United Kingdom</option>
                                     <option onClick={this.props.actions.CountryChange} value="United States">United States</option>
+                                    </optgroup>
                                 </select> 
                             </form>
                         </div>

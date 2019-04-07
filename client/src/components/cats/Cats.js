@@ -16,6 +16,7 @@ class Cats extends Component {
             cats: []
         }
     }
+
     componentDidMount() {
         fetch('/api/cats')
         .then(res => res.json())

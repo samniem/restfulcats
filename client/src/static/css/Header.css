@@ -37,6 +37,7 @@
     box-shadow: 13px 13px 13px #111;
     border-radius: 5%;
     border: 2px rgb(94, 90, 90) groove;
+    min-height: 17px;
 }
 
 #catLogo{
@@ -70,14 +71,21 @@
 }
 
 @media(min-width:1300px){
+    .App-header h1{
+        padding-top: 10vh;
+        font-size: calc(10px + 2vw);
+    }
     .searchForm{
         font-size: 1.7vh;
         width: 10vw;
     }
-    .searchForm form input{
+    .searchForm form input, select{
         height: 2.6vh;
         width: 100%;
         font-size: 1.7vh;
+    }
+    optgroup{
+        font-size: calc(40px + 1.7vh);
     }
     #catLogo{
         top: 2vh;
