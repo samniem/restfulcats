@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const mongodb = require('mongodb')
 const mongoose = require('mongoose')
 const path = require('path')
 
@@ -8,20 +7,19 @@ const app = express()
 app.use(bodyParser.json())
 
 //Define client
-app.use(express.static(path.join(__dirname+'/client')))
+app.use(express.static(path.join(__dirname+'/client/build')))
 
 //production
 if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'client/build/index.html')))
+    app.use(express.static(path.join(__dirname, 'client/build/')))
+    app.get('*', (req, res) =>{
+        res.sendFile(path.join(__dirname, 'client/build/index.html'))
+    })
+}else{
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname,'/client/public/index.html'))
+    })
 }
-
-//dev mode
-//app.get('/', (req, res) => {
-//    res.sendFile(path.join(__dirname,'/client/public/index.html'))
-//})
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'/client/build/index.html'))
-})
 
 //Schema
 const Cats = require('./models/cats')
