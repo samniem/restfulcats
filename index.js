@@ -12,6 +12,35 @@ app.use(express.static(path.join(__dirname+'/client/build')))
 //production
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'client/build/')))
+    //All cats
+app.get('/api/cats', (req, res) =>{
+    Cats.getCats((err, cats) => {
+        if(err){
+            throw err
+        }
+        res.json(cats)
+        })
+    })
+
+//Get cats by id
+app.get('/api/cats/:_id', (req,res) => {
+    Cats.getCatById(req.params._id, (err, cat) => {
+        if(err){
+            throw err
+        }
+        res.json(cat)
+        })
+    })
+
+//Get by name
+    app.get('/api/cats/breed/:name', (req, res) => {
+    Cats.getCatByName(req.params.name, (err, cat) => {
+        if(err){
+            throw err
+        }
+        res.json(cat)
+        })
+    })
     app.get('*', (req, res) =>{
         res.sendFile(path.join(__dirname, `client/build/${req.path}`))
     })
