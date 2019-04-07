@@ -13,7 +13,8 @@ class Cats extends Component {
         this.state = {
             query:"",
             country:"",
-            cats: []
+            cats: [],
+            property:"name"
         }
     }
 
@@ -32,10 +33,9 @@ class Cats extends Component {
     }
 
     render() {
-
         let filteredCats = this.state.cats.filter(
             (cat) => {
-                return cat.name.indexOf(this.state.query) !== -1 
+                return cat.name.toLowerCase().indexOf(this.state.query.toLowerCase()) !== -1 
             }
         )
         if(this.state.country !== ""){
@@ -44,6 +44,9 @@ class Cats extends Component {
                     return cat.origin === this.state.country
             })
         }
+
+        //SORT CATS ALPHABETICALLY BY NAME
+       filteredCats.sort(dynamicSort())
 
         return (
             <div>
@@ -60,14 +63,14 @@ class Cats extends Component {
                     <div>
                         <h2>Description</h2>
                     </div>
-                    <div>
+                    <div className="spacingS">
                         <h2>Temperament</h2>
                     </div>
                     <div>
                         <h2>Origin</h2>
                     </div>
                 </div>
-
+                <div className="containerGrid">
                 {filteredCats.map(cat => 
                     <div className="allCats Cards" key={cat._id}>
                         <div>
@@ -85,11 +88,21 @@ class Cats extends Component {
                             <img className="originFlag" src={`${require('../../static/flags/'+`${cat.origin}.svg`)}`} alt='flag.svg'/>
                             {cat.origin}
                         </div>
-                    </div>)
+                    </div>
+                    
+                )
+                    
                 }
+                </div>
             </div>
         );
     }
 }
 
 export default Cats
+
+function dynamicSort() {
+    return function(a, b) {
+        return a["name"].localeCompare(b["name"])
+    }
+}

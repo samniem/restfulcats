@@ -1,3 +1,9 @@
+.containerGrid{
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+}
+
 .allCats{
     font-size: 1.5vw;
     text-align: center;
@@ -9,6 +15,7 @@
     display: grid;
     grid-template-columns: 1fr 3.2fr 1fr 1fr;
     grid-gap: 2vw;
+    grid-auto-rows: 1fr;
     align-items: center;
     padding: 2vh 1vw;
 }
@@ -16,7 +23,6 @@
 .Cards{
     background-color: white;
     color: rgba(0, 0, 0, 0.897);
-    height:17vh;
     min-height:120px;
 }
 
@@ -37,19 +43,23 @@
     margin-bottom: 1vh;
 
 }
+.spacingS{
+    margin-right: 25px;
+}
 
 @media(max-width:700px){
     .allCats{
         font-size: calc(3px + 1.5vw);
         width: 92%;
-        padding: 0.5vh 0.5vw;
-    }
-    .Cards{
-        height: 25vh; 
+        padding: 0.35vh 0.35vw;
+        grid-gap: 0;
     }
     .allCats h3{
         margin-bottom: 0;
         font-size: calc(6px + 1.75vw);
+    }
+    .originFlag{
+        width:7vw;
     }
 }
 

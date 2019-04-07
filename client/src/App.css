@@ -10,3 +10,9 @@
     padding-bottom: 5vh;
     min-height: 100vh;
 }
+
+@media(max-width:730px){
+    .App{
+        font-weight: 500;
+    }
+}

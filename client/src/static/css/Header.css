@@ -6,11 +6,16 @@
     width: 92%;
     margin: auto;
 }
-
+select{
+    z-index: 3;
+}
+options{
+    display: none;
+}
 .App-header h1{
     margin: 0;
     padding-top:5vh;
-    font-size: minmax(12px, calc(10px + 3vh));
+    font-size: calc(10px + 3vh);
 }
 
 .searchContainer{
@@ -25,6 +30,7 @@
     margin: 4vh 2.5vw 2.5vw 0;
     height: 6%;
     font-weight: 800;
+    font-size: calc(7px + 1vh);
 }
 .searchForm p{
     margin-top: 0;
@@ -34,7 +40,6 @@
     width: 200px;
     color: white;
     background: #333;
-    box-shadow: 13px 13px 13px #111;
     border-radius: 5%;
     border: 2px rgb(94, 90, 90) groove;
     min-height: 17px;
@@ -61,6 +66,7 @@
         margin-top: 0;
         margin-bottom: 2.5vh;
     }
+
     #catLogo{
         position: relative;
         top: 2vh;
@@ -83,6 +89,7 @@
         height: 2.6vh;
         width: 100%;
         font-size: 1.7vh;
+        box-shadow: 3px 3px 3px #111;
     }
     optgroup{
         font-size: calc(40px + 1.7vh);
