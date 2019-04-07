@@ -4,6 +4,7 @@
   "description": "restful cats \\(^o^)/",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon",
