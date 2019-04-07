@@ -16,8 +16,11 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 //dev mode
+//app.get('/', (req, res) => {
+//    res.sendFile(path.join(__dirname,'/client/public/index.html'))
+//})
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'/client/public/index.html'))
+    res.sendFile(path.join(__dirname,'/client/build/index.html'))
 })
 
 //Schema
