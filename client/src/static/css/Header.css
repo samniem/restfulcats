@@ -1,0 +1,86 @@
+.App-header{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    box-sizing: content-box;
+    width: 92%;
+    margin: auto;
+}
+
+.App-header h1{
+    margin: 0;
+    padding-top:5vh;
+    font-size: minmax(12px, calc(10px + 3vh));
+}
+
+.searchContainer{
+    width: 95%;
+    margin: 0 3vw;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+.searchForm{
+    display: inline-block;
+    margin: 4vh 2.5vw 2.5vw 0;
+    height: 6%;
+    font-weight: 800;
+}
+.searchForm p{
+    margin-top: 0;
+}
+
+.searchForm form select, input{
+    width: 200px;
+    color: white;
+    background: #333;
+    box-shadow: 13px 13px 13px #111;
+    border-radius: 5%;
+    border: 2px rgb(94, 90, 90) groove;
+}
+
+#catLogo{
+    min-height: 90px;
+    max-height: 13vh;
+    position: absolute;
+    left: 10%;
+    top: 3%;
+}
+
+@media(max-width:730px){
+    .App-header h1{
+        font-size: calc(10px + 2vh);
+    }
+    .searchContainer{
+        display: block;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .searchForm:nth-child(even){
+        margin-top: 0;
+        margin-bottom: 2.5vh;
+    }
+    #catLogo{
+        position: relative;
+        top: 2vh;
+        left: none;
+        margin-right: 20%;
+        margin-top: 3%;
+    }
+}
+
+@media(min-width:1300px){
+    .searchForm{
+        font-size: 1.7vh;
+        width: 10vw;
+    }
+    .searchForm form input{
+        height: 2.6vh;
+        width: 100%;
+        font-size: 1.7vh;
+    }
+    #catLogo{
+        top: 2vh;
+        min-height: 18vh;
+    }
+}

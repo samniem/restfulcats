@@ -1,0 +1,35 @@
+{
+  "name": "restfulcats",
+  "version": "1.0.0",
+  "description": "restful cats \\(^o^)/",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samniem/restfulcats.git"
+  },
+  "author": "samniem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samniem/restfulcats/issues"
+  },
+  "homepage": "https://github.com/samniem/restfulcats#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.22",
+    "morgan": "^1.9.1",
+    "node": "^11.12.0",
+    "passport": "^0.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
