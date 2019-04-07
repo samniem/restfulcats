@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const mongodb = require('mongodb')
 const mongoose = require('mongoose')
 const path = require('path')
 
@@ -24,8 +25,8 @@ app.get('/', (req, res) => {
 const Cats = require('./models/cats')
 
 //Mongoose connection
-var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/cats'
-mongoose.connect(uristring, function(err, res){
+const uristring = process.env.MONGOLAB_URI || 'mongodb://localhost/cats'
+mongoose.connect(uristring, {useNewUrlParser: true }, function(err, res){
     if(err) {
         console.log('Error connecting to MongoDB at ' + uristring + ' with error '+err)
     }else{
@@ -71,5 +72,5 @@ app.get('/api/cats/breed/:name', (req, res) => {
 })
 
 app.listen(port)
-console.log(port)
 console.log(`Server running on port ${port}`)
+

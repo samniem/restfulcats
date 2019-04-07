@@ -82,7 +82,7 @@ class Cats extends Component {
                             )}
                             </div>
                         <div>
-                            <img className="originFlag" src={`${require('../../static/flags/'+`${cat.origin}.svg`)}`} alt='flag.png'/>
+                            <img className="originFlag" src={`${require('../../static/flags/'+`${cat.origin}.svg`)}`} alt='flag.svg'/>
                             {cat.origin}
                         </div>
                     </div>)
