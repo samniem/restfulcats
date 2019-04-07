@@ -9,7 +9,7 @@ class Header extends Component {
             <div>
                 <header className="App-header">
                 <img id="catLogo" src={CatLogo} alt="catlogo.png"/>
-                    <h1>RESTful Cat</h1>
+                    <h1>RESTful Cats</h1>
                     <div className="searchContainer">
                         <div className="searchForm">
                             Search By Breed
@@ -21,7 +21,7 @@ class Header extends Component {
                             </form>
                         </div>
                         <div className="searchForm">
-                            Select Country
+                            Search By Origin
                             <form>
                                 <select>
                                     <optgroup>
