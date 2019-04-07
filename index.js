@@ -4,7 +4,6 @@ const mongodb = require('mongodb')
 const mongoose = require('mongoose')
 const path = require('path')
 
-const port = process.env.PORT | 5000
 const app = express()
 app.use(bodyParser.json())
 
@@ -71,6 +70,6 @@ app.get('/api/cats/breed/:name', (req, res) => {
     })
 })
 
-app.listen(port)
-console.log(`Server running on port ${port}`)
+app.listen(process.env.PORT || 5000)
+console.log(`Server running on port ${process.env.PORT || 5000}`)
 
