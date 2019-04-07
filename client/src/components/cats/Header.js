@@ -5,7 +5,6 @@ import CatLogo from '../../static/logo/telicat_logo.png'
 
 class Header extends Component {
     render(){
-        console.log(this.props)
         return(
             <div>
                 <header className="App-header">
