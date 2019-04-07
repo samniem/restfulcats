@@ -26,8 +26,8 @@ class Header extends Component {
                                 <select>
                                     <optgroup>
                                     <option onClick={this.props.actions.CountryChange} value="">Any</option>
-                                    <option onClick={this.props.actions.CountryChange} value="France">France</option>
-                                    <option onClick={this.props.actions.CountryChange} value="Japan">Japan</option>
+                                    <option onTouchStart={this.props.actions.CountryChange} onClick={this.props.actions.CountryChange} value="France">France</option>
+                                    <option onTouchStart={this.props.actions.CountryChange} onClick={this.props.actions.CountryChange} value="Japan">Japan</option>
                                     <option onClick={this.props.actions.CountryChange} value="Singapore">Singapore</option>
                                     <option onClick={this.props.actions.CountryChange} value="Somalia">Somalia</option>
                                     <option onClick={this.props.actions.CountryChange} value="Turkey">Turkey</option>
