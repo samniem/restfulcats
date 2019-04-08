@@ -87,7 +87,7 @@
     .searchForm form input, select{
         height: calc(12px+2vh);
         width: 100%;
-        font-size: calc(12px+1.45vh);
+        font-size: calc(11px+1.35vh);
         box-shadow: 3px 3px 3px #111;
     }
     optgroup{
