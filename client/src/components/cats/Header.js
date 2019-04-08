@@ -8,7 +8,7 @@ class Header extends Component {
         return(
             <div>
                 <header className="App-header">
-                <img id="catLogo" src={CatLogo} alt="catlogo.png"/>
+                    <img id="catLogo" src={CatLogo} alt="catlogo.png"/>
                     <h1>RESTful Cats</h1>
                     <div className="searchContainer">
                         <div className="searchForm">
