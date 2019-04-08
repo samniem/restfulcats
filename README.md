@@ -1,7 +1,7 @@
 # restfulcats
 Restful api for cats. Done using Node, Express, React and MongoDB. The database uses cloud hosting.
 
-To run the file use
+To run the app use
   
     npm run dev
   
