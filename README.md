@@ -2,7 +2,9 @@
 Restful api for cats. Done using Node, Express, React and MongoDB. The database uses cloud hosting.
 
 To run the file use
+  
   npm run dev
+  
 in the project folder.
 
 You can try the deployed app at https://restfulcats.herokuapp.com/
