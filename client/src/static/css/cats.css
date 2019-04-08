@@ -65,6 +65,7 @@
 
 @media(min-width:1200px){
     .allCats{
-        font-size:1.65vh;
+        font-size: calc(10px + 1.45vh);
     }
+    
 }
