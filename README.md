@@ -3,7 +3,7 @@ Restful api for cats. Done using Node, Express, React and MongoDB. The database 
 
 To run the file use
   
-  npm run dev
+    npm run dev
   
 in the project folder.
 
