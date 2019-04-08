@@ -1,5 +1,5 @@
 # restfulcats
-Restful api for cats. Done using Node, Express, React and MongoDB. The database uses cloud hosting.
+Fullstack project displaying a cat list. Done using Node, Express, React and MongoDB. The database uses cloud hosting.
 
 To run the app use
   
