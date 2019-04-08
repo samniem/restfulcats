@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Restful Cats",
+  "name": "Restful Cats, a database for finding cats by origin and name",
   "icons": [
     {
       "src": "favicon.ico",

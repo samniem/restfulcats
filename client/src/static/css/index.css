@@ -1,6 +1,6 @@
 @font-face{
   font-family: 'moonfont';
-  src: url(static/fonts/moon.otf)
+  src: url(../fonts/moon.otf)
 }
 
 body {
